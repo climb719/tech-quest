@@ -1,18 +1,19 @@
 # Tech Quest App
     Tech Quest is an app for sharing, studying, and discussing interview questions and answers for tech related jobs.
 
-## Models
+## Models  
+--no-test-framework
 
-  - User
+  - User 
       - name
       - email
       - password_digest
       - has_many :interview_questions
       - has_many :comments
       - has_many :commented_questions, through: :interview_ questions
-      - has_many :postions, through: :interview_questions
+    
 
-  - Interview_Questions - join tabel? Joining users and positions
+  - Interview_Questions 
       - question:string
       - answer:text
       - belongs_to :user
@@ -24,7 +25,7 @@
      - title:string
      - description:string
      - has_many :interview_questions
-     - has_many :users, through: :interview_questions 
+   
 
   - Comments - join tabel? Joining users and interview_questions
      - content:text
