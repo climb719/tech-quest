@@ -6,28 +6,28 @@
   - User
       - name
       - email
-      - password
+      - password_digest
       - has_many :interview_questions
       - has_many :comments
       - has_many :commented_questions, through: :interview_ questions
       - has_many :postions, through: :interview_questions
 
-  - Interview_Questions
-      - question :string
-      - answer :text
+  - Interview_Questions - join tabel? Joining users and positions
+      - question:string
+      - answer:text
       - belongs_to :user
       - belongs_to :position
       - has_many :comments
       - has_many users, through: :comments
 
   - Position:
-     - title :string
-     - description :string
+     - title:string
+     - description:string
      - has_many :interview_questions
      - has_many :users, through: :interview_questions 
 
-  - Comments
-     - content :text
+  - Comments - join tabel? Joining users and interview_questions
+     - content:text
      - belongs_to :user
      - belongs_to :interview_question 
     
