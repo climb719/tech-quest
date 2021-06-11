@@ -13,7 +13,7 @@
       - has_many :commented_questions, through: :interview_ questions
     
 
-  - Interview_Questions 
+  - Interview_Questions  
       - question:string
       - answer:text
       - belongs_to :user
@@ -23,7 +23,7 @@
 
   - Position:
      - title:string
-     - description:string
+     - description:string ??
      - has_many :interview_questions
    
 
