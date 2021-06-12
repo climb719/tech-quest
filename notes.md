@@ -10,7 +10,7 @@
       - password_digest
       - has_many :interview_questions
       - has_many :comments
-      - has_many :commented_questions, through: :interview_ questions
+      - has_many :commented_questions, through: :comments
     
 
   - Interview_Questions  
