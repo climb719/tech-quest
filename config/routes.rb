@@ -4,6 +4,13 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
 
+  #login - 2 routes - display login and process
+  get '/login' => 'sessions#new'
+  post '/login'  => 'sessions#create'
+
+  #logout route - delete since deleting the session
+  delete '/logout' => 'sessions#destroy'
+
   resources :comments
   resources :positions
   resources :interview_questions
