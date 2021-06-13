@@ -5,8 +5,11 @@ class UsersController < ApplicationController
     end
 
     def create
+        binding.pry
     end
 
     def show
     end
 end
+
+

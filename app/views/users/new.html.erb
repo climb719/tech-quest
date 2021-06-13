@@ -1,14 +1,18 @@
 <h1>Sign up here: </h1>
 <! form for because creating in databade vs login can use form tag not creating or updating in db>
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, url: '/signup') do |f| %>
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, require:true %>
+    <br>
     <br>
     <%= f.label :email %>
-    <%= f.email_field :email %>
+    <%= f.email_field :email, require:true %>
+    <br>
     <br>
     <%= f.label :password %>
-    <%= f.password_field :passwordn%>
+    <%= f.password_field :password, require:true %>
+    <br>
     <br>
 
-    <%= f.submit %>
+    <%= f.submit "Submit" %>
+    <% end %>
