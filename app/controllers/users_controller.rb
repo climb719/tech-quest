@@ -5,7 +5,16 @@ class UsersController < ApplicationController
     end
 
     def create
-        binding.pry
+        @user = User.new(user_params)
+        if @user.savessession[:user_id] = @user.id
+            redirect_to user_path(@user)
+        else
+            render :new
+        end
+        #flow instatiate a new user with the params, assign to instance variable
+        #check to see if saves/valid
+        #if valid, log them in and redirect to show page
+        #else render the new/signup page again 
     end
 
     def show
