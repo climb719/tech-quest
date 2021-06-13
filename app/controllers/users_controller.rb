@@ -20,6 +20,9 @@ class UsersController < ApplicationController
  
 
     def show
+        @user = User.find_by_id(params[:id])
+        redirect_to '/' if !@user
+        #find by id will return nil if doesn't find and find throws an error
     end
 
     private
