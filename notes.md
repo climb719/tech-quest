@@ -1,5 +1,5 @@
 # Tech Quest App
-    Tech Quest is an app for sharing, studying, and discussing interview questions and answers for tech related jobs.
+    Tech Quest is an app for sharing, studying, and discussing tech interview questions and answers for software engineering jobs. 
 
 ## Models  
 --no-test-framework

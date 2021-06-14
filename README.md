@@ -1,4 +1,5 @@
-# README
+# Tech Quest App
+    Tech Quest is an app for sharing, studying, and discussing tech interview questions and answers for software engineering jobs. 
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
