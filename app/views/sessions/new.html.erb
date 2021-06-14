@@ -1,0 +1,14 @@
+<h1>Log In </h1>
+<! pass in model instead of object because not creating an object and knows about attributes of user and interprets login route will post method >
+<%= form_for :user do |f| %>
+    
+    <%= f.label :email %>
+    <%= f.email_field :email, require:true %>
+    <br>
+    <br>
+    <%= f.label :password %>
+    <%= f.password_field :password, require:true %>
+    <br>
+    <br>
+    <%= f.submit "Login" %>
+    <% end %>
