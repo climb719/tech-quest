@@ -6,17 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Position.create(title: "Software Engineer")
-Position.create(title: "Software Developer")
-Position.create(title: "Front End Developer")
-Position.create(title: "Network Engineer")
-Position.create(title: "Java Developer")
-Position.create(title: "Junior Web Developer")
-Position.create(title: "Full Stack Developer")
-Position.create(title: "Entry Level Web Developer")
-Position.create(title: "Entry Level Software Engineer")
-Position.create(title: "SQL Developer")
-Position.create(title: "Programmer") 
+Category.create(name: "Software Engineer")
+Category.create(name: "Software Developer")
+Category.create(name: "Front End Developer")
+Category.create(name: "Network Engineer")
+Category.create(name: "Java Developer")
+Category.create(name: "Junior Web Developer")
+Category.create(name: "Full Stack Developer")
+Category.create(name: "Entry Level Web Developer")
+Category.create(name: "Entry Level Software Engineer")
+Category.create(name: "SQL Developer")
+Category.create(name: "Programmer") 
 	
 
 
