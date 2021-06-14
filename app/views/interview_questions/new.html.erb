@@ -1,0 +1,14 @@
+<h1>Add a new Interview Question here: </h1>
+
+<%= form_for(@interview_question) do |f| %>
+    <%= f.label :question %>
+    <%= f.text_field :question %>
+    <br>
+    <br>
+    <%= f.label :answer %>
+    <%= f.text_area :answer %>
+    <br>
+    <br>
+    <%= f.submit "Create Your Interview Question" %>
+
+    <% end %>
