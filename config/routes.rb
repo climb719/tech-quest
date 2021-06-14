@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   resources :comments
-  resources :positions
+  resources :categories
   resources :interview_questions
   resources :users 
   #routes order matters so custom routes don't get associated with an id

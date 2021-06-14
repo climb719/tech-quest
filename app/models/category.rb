@@ -1,3 +1,3 @@
-class Position < ApplicationRecord
+class Category < ApplicationRecord
     has_many :interview_questions
 end
