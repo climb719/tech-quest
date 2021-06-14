@@ -1,6 +1,7 @@
 <h1>Add a new Interview Question here: </h1>
 
 <%= form_for(@interview_question) do |f| %>
+ 
     <%= f.label :question %>
     <%= f.text_field :question %>
     <br>
@@ -9,6 +10,16 @@
     <%= f.text_area :answer %>
     <br>
     <br>
+    <%= f.label "Choose a Job position:" %>
+    <%= f.collection_select :position_id, Position.all, :id, :title, include_blank: true %>
+    
+    <p> Or create a new position:
+        <%= f.fields_for :position do |c| %>
+        <%= c.text_field :title %>
+        <% end %>
+    </p>
+
+    <br></br>
     <%= f.submit "Create Your Interview Question" %>
 
     <% end %>
