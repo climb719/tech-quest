@@ -10,7 +10,7 @@
     <%= f.text_area :answer %>
     <br>
     <br>
-    <%= f.label "Choose a Job position:" %>
+    <%= f.label "Choose the job position you are applying for:" %>
     <%= f.collection_select :position_id, Position.all, :id, :title, include_blank: true %>
     
     <p> Or create a new position:
