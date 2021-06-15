@@ -10,7 +10,7 @@
     <%= f.text_area :answer %>
     <br>
     <br>
-    <%= f.label "Choose the job category you are applying for:" %>
+    <%= f.label "Choose a category for this question:" %>
     <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: true %>
     
     <p> Or create a new category:
