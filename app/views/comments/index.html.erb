@@ -1,0 +1,9 @@
+<h1> All Comments </h1>
+
+
+
+<ul> 
+<% @comments.each do |c| %>
+    <li> <%= c.user.name %> added "<%=c.content %> </li> to this question: <%= link_to c.interview_question.question, interview_question_path(c.interview_question_id)%> </li> 
+    <% end %>
+</ul>
