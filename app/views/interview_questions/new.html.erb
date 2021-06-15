@@ -11,11 +11,11 @@
     <br>
     <br>
     <%= f.label "Choose the job category you are applying for:" %>
-    <%= f.collection_select :category_id, Category.all, :id, :title, include_blank: true %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: true %>
     
     <p> Or create a new category:
         <%= f.fields_for :category do |c| %>
-        <%= c.text_field :title %>
+        <%= c.text_field :name %>
         <% end %>
     </p>
 

@@ -1,2 +1,2 @@
-module PositionsHelper
+module CategoriesHelper
 end
