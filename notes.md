@@ -35,3 +35,8 @@
     #xmVJW6mTD9XgEqF
     bob.code@gmail.com
     password
+
+    # Nested Routes
+        - #new and #index
+        - '/interview_questions/:id/comments'
+        - '/categories/:id/interview_questions'
