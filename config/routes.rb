@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   end
   resources :interview_questions do
     resources :comments, only: [:new, :create, :index] 
+  end
 
   #routes order matters so custom routes don't get associated with an id
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

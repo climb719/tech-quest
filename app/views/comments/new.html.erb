@@ -1,0 +1,15 @@
+<h1>Add a Comment here:</h1>
+
+<%= form_for(@comment) do |f| %>
+
+    <%= f.label :interview_question %>
+    <%= f.collection_select :interview_question_id, InterviewQuestion.all, :id, :question, include_blank: true %>
+    
+ 
+    <%= f.label :content %>
+    <%= f.text_field :content  %>
+
+    <%= f.submit %>
+
+    <% end %>
+  
