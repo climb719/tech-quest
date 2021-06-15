@@ -11,10 +11,15 @@ Rails.application.routes.draw do
   #logout route - delete since deleting the session
   delete '/logout' => 'sessions#destroy'
 
-  resources :comments
-  resources :categories
-  resources :interview_questions
   resources :users 
+  resources :comments
+
+  resources :categories do
+    resources :interview_questions, only: [:new, :create, :index] 
+  end
+  resources :interview_questions do
+    resources :comments, only: [:new, :create, :index] 
+
   #routes order matters so custom routes don't get associated with an id
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
