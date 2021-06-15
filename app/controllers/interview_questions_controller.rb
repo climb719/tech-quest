@@ -20,6 +20,10 @@ class InterviewQuestionsController < ApplicationController
         end
     end
 
+    def show
+        @interview_question = InterviewQuestion.find_by(id: params[:id])
+    end
+
     private
 
     def interview_question_params

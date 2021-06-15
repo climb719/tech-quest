@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
 
     def index
         #if comment nested check if interview_question id 
-        if params [:interview_question_id] && @interview_question = InterviewQuestions.find_by_id(params[:interview_question_id])
+        if params[:interview_question_id] && @interview_question = InterviewQuestion.find_by_id(params[:interview_question_id])
             @comments = @interview_question.comments
         else
         @comments = Comment.all
