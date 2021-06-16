@@ -1,1 +1,15 @@
 <h1> <%=@interview_question.question %> </h1>
+<h4> Posted by: <%= @interview_question.user.name %></h4>
+
+<div> <%= @interview_question.answer %> </div>
+
+<h3> Comments: </h3>
+
+<% @interview_question.comments.each do |c| %>
+
+    <li> <%= c.user.name %> says "<%= link_to c.content, comment_path(c) %>" </li>
+
+    <% end %>
+ 
+  <p>  <%= link_to "Add a Comment", new_comment_path %> </p>
+
