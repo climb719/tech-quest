@@ -9,6 +9,8 @@
     <% if !@interview_question %>
     <%= f.label :interview_question %>
     <%= f.collection_select :interview_question_id, InterviewQuestion.all, :id, :question, include_blank: true %>
+    <% else %>
+    <%= f.hidden_field :interview_question_id %>
     <% end %>
  
     <label> Add your comment: </label>
