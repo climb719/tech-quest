@@ -17,6 +17,7 @@
     <% if logged_in?%>
     <%= link_to "All Interview Questions", interview_questions_path %> |
     <%= link_to "Add an Interview Question", new_interview_question_path %> |
+    <%= link_to "All Comments", comments_path %> |
     <%= link_to "Add a Comment", new_comment_path %> |
     <%= link_to "Log Out", logout_path, method:"delete" %>
 
