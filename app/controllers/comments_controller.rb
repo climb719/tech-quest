@@ -1,10 +1,11 @@
 class CommentsController < ApplicationController
 
     def index
-        #if comment nested check if interview_question id 
+        #if it's nested and can find the question, setting value of @ post and then evaluating if @ post nil or something/true, if true will keep reading the code, if false will skip to else
         if params[:interview_question_id] && @interview_question = InterviewQuestion.find_by_id(params[:interview_question_id])
             @comments = @interview_question.comments
         else
+            @error = "That interview question doesn't exist, here are the comments that have been posted:"
         @comments = Comment.all
         end
     end
