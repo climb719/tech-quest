@@ -7,7 +7,7 @@
 
 <% @interview_question.comments.sort_by{|t| - t.created_at.to_i}.first(3).each do |c| %>
 
-    <li> <%= c.user.name %> said "<%= link_to c.content, comment_path(c) %>" on <%= c.created_at.strftime("%d %b. %Y") %>  </li>
+    <li> <%= c.user.name %> said "<%= link_to truncate(c.content, :length => 65), comment_path(c) %>" on <%= c.created_at.strftime("%d %b. %Y") %>  </li>
 
     <% end %>
 
