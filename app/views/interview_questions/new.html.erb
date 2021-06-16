@@ -5,7 +5,7 @@
 <% end %>
 
 
-<%= form_for([@category, @interview_question]) do |f| %>
+<%= form_for([@interview_question.category, @interview_question]) do |f| %>
  
     <%= f.label :question %>:
     <%= f.text_field :question  %>
@@ -15,6 +15,7 @@
     <%= f.text_area :answer %>
     <br>
     <br>
+    <% if  !@interview_question.category %>
     <%= f.label "Choose a category for this question:" %>
     <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: true %>
     
@@ -22,6 +23,9 @@
         <%= f.fields_for :category do |c| %>
         <%= c.text_field :name %>
         <% end %>
+    <% else %>
+    <%= f.hidden_field :category_id %>   
+    <% end %>
     </p>
 
     <br></br>
