@@ -11,6 +11,11 @@ class CommentsController < ApplicationController
     end
 
     def new
+        #if nested and we find the post
+        if params[:interview_question_id] && @interview_question = InterviewQuestion.find_by_id(params[:interview_question_id])
+            #instantiate a new comment that knows it belongs to an intrview question
+            @comment = @interview_question.comments.build
+        else
         @comment = Comment.new
     end
 
