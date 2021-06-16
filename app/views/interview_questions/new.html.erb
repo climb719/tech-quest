@@ -1,6 +1,11 @@
-<h1>Add a new Interview Question here: </h1>
+<% if @interview_question.category %>
+<h1>New Interview Question for:</h1> <br> <h2><%= @interview_question.category.name %></h2> 
+<% else %>
+<h1>Add a new Interview Question here:</h1>
+<% end %>
 
-<%= form_for(@interview_question) do |f| %>
+
+<%= form_for([@category, @interview_question]) do |f| %>
  
     <%= f.label :question %>:
     <%= f.text_field :question  %>

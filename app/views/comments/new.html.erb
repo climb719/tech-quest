@@ -17,7 +17,7 @@
   </div>
 <% end %>
 
-<%= form_for([@post, @comment]) do |f| %>
+<%= form_for([@interview_questions, @comment]) do |f| %>
     <% if !@comment.interview_question %>
     <%= f.label :interview_question %>
     <%= f.collection_select :interview_question_id, InterviewQuestion.all, :id, :question, include_blank: true %>

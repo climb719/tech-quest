@@ -6,8 +6,16 @@ class InterviewQuestionsController < ApplicationController
     end
 
     def new
-        @interview_question = InterviewQuestion.new
+        #if nested and we find the category 
+        if params[:category_id] && @category = Category.find_by_id(params[:category_id])
+            #instantiate a new question that knows it belongs to a category
+            @interview_question = @category.interview_questions.build
+        else
+            @interview_question = InterviewQuestion.new
+        end
     end
+
+     
 
     def create
         #binding.pry
