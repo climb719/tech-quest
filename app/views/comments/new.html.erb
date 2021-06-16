@@ -1,12 +1,24 @@
-<% if @interview_question %>
-<h1>New comment for:</h1> <br> <h2><%= @interview_question.question %></h2> 
-<p><%= @interview_question.answer %></p>
+<% if @comment.interview_question %>
+<h1>New comment for:</h1> <br> <h2><%= @comment.interview_question.question %></h2> 
+<p><%= @comment.interview_question.answer %></p>
 <% else %>
 <h1>Add a Comment here:</h1>
 <% end %>
 
+<% if @comment.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+    <ul>
+      <% @comment.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for([@post, @comment]) do |f| %>
-    <% if !@interview_question %>
+    <% if !@comment.interview_question %>
     <%= f.label :interview_question %>
     <%= f.collection_select :interview_question_id, InterviewQuestion.all, :id, :question, include_blank: true %>
     <% else %>

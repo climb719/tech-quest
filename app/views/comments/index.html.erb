@@ -1,5 +1,9 @@
-<h1> All Comments </h1>
+<% if @interview_question %>
+<h1> Comments for <%= @interview_question.question %> </h1>
 
+<% else %>
+<h1> All Comments </h1>
+<% end %>
 
 
 <ul> 
