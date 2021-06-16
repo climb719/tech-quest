@@ -16,7 +16,8 @@ class CommentsController < ApplicationController
             #instantiate a new comment that knows it belongs to an intrview question
             @comment = @interview_question.comments.build
         else
-        @comment = Comment.new
+            @comment = Comment.new
+        end
     end
 
     def create 
