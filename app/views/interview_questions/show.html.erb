@@ -10,6 +10,8 @@
     <li> <%= c.user.name %> says "<%= link_to c.content, comment_path(c) %>" </li>
 
     <% end %>
+
+<p>  <%= link_to "See all comments for this question", interview_question_comments_path(@interview_question) %> </p>
  
   <p>  <%= link_to "Add a Comment", new_comment_path %> </p>
 
