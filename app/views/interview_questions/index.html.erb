@@ -1,6 +1,8 @@
 <h1> All Interview Questions </h1>
 
-<% @interview_questions.each do |iq| %>
+<% @interview_questions.each do |category| %>
+    <br><b><%=category.name%> <br> <% category.interview_questions.each do |iq| %>
     <%= link_to iq.question, interview_question_path(iq) %> <br>
-   
     <% end %>
+<% end %>
+

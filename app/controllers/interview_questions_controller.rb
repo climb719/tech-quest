@@ -2,7 +2,8 @@ class InterviewQuestionsController < ApplicationController
     before_action :redirect_if_not_logged_in
 
     def index
-        @interview_questions = InterviewQuestion.all
+        # @notes = current_user.topics.group(:name)
+        @interview_questions = Category.all.group(:name)
     end
 
     def new
