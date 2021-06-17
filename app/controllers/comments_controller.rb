@@ -51,10 +51,10 @@ class CommentsController < ApplicationController
     end
 
     def delete
-        @comment =  Comment.find(id: params["id"]) 
-        redirect_unauthorized_user
+        @comment =  Comment.find(id: params[:id]) 
+      
         @comment.destroy
-        redirect interview_questions_path
+        redirect comments_path
     end
 
 
