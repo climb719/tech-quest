@@ -33,6 +33,23 @@ class CommentsController < ApplicationController
         @comment = Comment.find_by(id: params[:id])
     end
 
+    def edit
+        @comment = Comment.find_by_id(params[:id])
+        #binding.pry
+        redirect_to comments_path if !@comment
+    end
+
+    def update
+        @comment = Comment.find_by_id(params[:id])
+        #binding.pry
+        redirect_to comments_path if !@comment
+        if @comment.update(comment_params)
+            redirect_to comment_path(@comment)
+        else
+            render :edit
+        end
+    end
+
     def delete
         @comment =  Comment.find(id: params["id"]) 
         redirect_unauthorized_user
