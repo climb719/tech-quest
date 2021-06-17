@@ -2,7 +2,6 @@ class InterviewQuestionsController < ApplicationController
     before_action :redirect_if_not_logged_in
 
     def index
-        # @notes = current_user.topics.group(:name)
         @interview_questions = Category.all.group(:name)
     end
 
@@ -34,9 +33,9 @@ class InterviewQuestionsController < ApplicationController
     end
 
     def edit
-        @interview_question = InterviewQuestion.find_by(id: params[:id])
+        @interview_question = InterviewQuestion.find_by_id(params[:id])
+        #binding.pry
         redirect_to interview_questions_path if !@interview_question
-        #@interview_question.build_category if !@interview_question.category
     end
 
     def update
