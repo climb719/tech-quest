@@ -1,0 +1,26 @@
+<h1> Edit any of the information for:<%= @interview_question.question %> <//h1>
+
+<%= form_for([@interview_question.category, @interview_question]) do |f| %>
+ 
+    <%= f.label :question %>:
+    <%= f.text_field :question  %>
+    <br>
+    <br>
+    <%= f.label :answer %>:
+    <%= f.text_area :answer %>
+    <br>
+    <br>
+  
+    <%= f.label "Choose a category for this question:" %>
+    <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: true %>
+    
+    <p> Or create a new category:
+        <%= f.fields_for :category do |c| %>
+        <%= c.text_field :name %>
+        <% end %>
+    </p>
+
+    <br></br>
+    <%= f.submit "Update Your Interview Question" %>
+
+    <% end %>
