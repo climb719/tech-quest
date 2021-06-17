@@ -39,6 +39,16 @@ class InterviewQuestionsController < ApplicationController
         #@interview_question.build_category if !@interview_question.category
     end
 
+    def update
+        @interview_question = InterviewQuestion.find_by(id: params[:id])
+        redirect_to interview_questions_path if !@interview_question
+        if @interview_question.update(interview_question_params)
+            redirect_to interview_question_path(@interview_question)
+        else
+            render :edit
+        end
+    end
+
     private
 
     def interview_question_params
