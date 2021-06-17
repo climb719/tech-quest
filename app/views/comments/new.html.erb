@@ -5,7 +5,7 @@
 <h1>Add a Comment here:</h1>
 <% end %>
 
-<%= render partial: "layouts/errors", locals: {object: @comments} %>
+<%= render partial: "layouts/errors", locals: {object: @comment} %>
 
 <%= form_for([@interview_questions, @comment]) do |f| %>
     <% if !@comment.interview_question %>
