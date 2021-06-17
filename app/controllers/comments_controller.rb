@@ -33,6 +33,13 @@ class CommentsController < ApplicationController
         @comment = Comment.find_by(id: params[:id])
     end
 
+    def delete
+        @comment =  Comment.find(id: params["id"]) 
+        redirect_unauthorized_user
+        @comment.destroy
+        redirect interview_questions_path
+    end
+
 
     private
 

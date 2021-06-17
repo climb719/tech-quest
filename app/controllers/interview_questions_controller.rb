@@ -48,6 +48,7 @@ class InterviewQuestionsController < ApplicationController
         end
     end
 
+
     private
 
     def interview_question_params

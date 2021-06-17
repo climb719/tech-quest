@@ -1,3 +1,13 @@
 <h3> <%=@comment.user.name %> said: </h3>
 <%= @comment.content %>
 <h6> <%= @comment.created_at.strftime("%B %d, %Y") %>
+
+<% if @comment.user == current_user%>
+<p>  <%= link_to "Edit Question", edit_comment_path(@comment) %> </p>
+<br>
+<form method="post" action=comment_path(@comment) %> </p>
+<br>
+<input type= "hidden" name="_method" value="DELETE">
+<input type="submit" value="Delete This Comment">
+</form>
+<%end%>
