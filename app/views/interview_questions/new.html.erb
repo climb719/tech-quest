@@ -5,7 +5,7 @@
 <% end %>
 
 
-<%= render 'layouts/errors', locals: {object: @interview_question} %>
+<%= render partial: "layouts/errors", locals: {object: @interview_question} %>
 
 <%= form_for([@interview_question.category, @interview_question]) do |f| %>
  
