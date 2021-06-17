@@ -1,4 +1,7 @@
 <h1>Sign up here: </h1>
+
+<%= render 'layouts/errors', locals: {object: @user} %>
+
 <! form for because creating in databade vs login can use form tag not creating or updating in db>
 <%= form_for(@user, url: '/signup') do |f| %>
     <%= f.label :name %>
