@@ -3,6 +3,8 @@ class InterviewQuestion < ApplicationRecord
   belongs_to :category
   has_many :comments
   has_many :users, through: :comments
+  #accepts_nested_attributes_for :category
+  validates :question, :answer, :category, presence: true 
 end
 
 

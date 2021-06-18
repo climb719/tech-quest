@@ -61,7 +61,7 @@ class InterviewQuestionsController < ApplicationController
     private
 
     def interview_question_params
-        params.require(:interview_question).permit(:question, :answer, :category_id)
+        params.require(:interview_question).permit(:question, :answer, :category_id )#catergory_attributes: [:name]
     end
 
     
