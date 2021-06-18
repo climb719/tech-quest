@@ -15,8 +15,7 @@ class InterviewQuestionsController < ApplicationController
         end
     end
 
-     
-
+    
     def create
         #binding.pry
         @interview_question = current_user.interview_questions.build(interview_question_params)
@@ -47,6 +46,16 @@ class InterviewQuestionsController < ApplicationController
             render :edit
         end
     end
+
+    # def destroy
+
+    #     @interview_question = InterviewQuestion.find(params[:id]) 
+    #     session[:user_id] = nil
+    #     @interview_question.destroy
+    #     redirect_to interview_questions_path
+    # end
+    # <%= link_to "Delete", interview_question_path(@interview_question), flash[:message] => "Are you sure?", :method => :delete %>
+
 
 
     private

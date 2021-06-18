@@ -26,6 +26,8 @@ class UsersController < ApplicationController
         #find by id will return nil if doesn't find and find throws an error
     end
 
+
+
     private
 
     def user_params
