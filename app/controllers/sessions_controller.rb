@@ -46,6 +46,9 @@ class SessionsController < ApplicationController
         if user.valif?
                 session[:user_id] = user.id
                 redirect_to user_path(user)
+        else
+            flash[:message] = "Something went wrong"
+            redirect_to login_page
     #log them in 
 
 
