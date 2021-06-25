@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
     end
 
     def omniauth
-       # byebug
+       #binding.pry
         # #sole responsibility if logging in with oauth
         # #method for logging in only with omniauth
         # # if usere has logged in this way, find them
