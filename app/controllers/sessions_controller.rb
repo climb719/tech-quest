@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
         redirect_to root_path
     end
 
-    def create
+    def create #loggining in normal way
         #find user - not creating or updatinf user, don't need instance variable 
         user = User.find_by(email: params[:user][:email])
         #check if find the user AND passowrd valid
@@ -21,6 +21,10 @@ class SessionsController < ApplicationController
         flash[:massage] = "Oops, looks like your login info is incorrect. Please try again."
         redirect_to "/login"
         end
+    end
+
+    def omniauth
+        #sole responsibility if logging in with oauth
     end
 
 
