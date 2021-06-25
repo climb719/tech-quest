@@ -25,6 +25,8 @@ class SessionsController < ApplicationController
 
     def omniauth
         #sole responsibility if logging in with oauth
+        #method for logging in only with omniauth
+        byebug
     end
 
 
