@@ -27,6 +27,7 @@ class SessionsController < ApplicationController
         #sole responsibility if logging in with oauth
         #method for logging in only with omniauth
         byebug
+        #before going to 3rd party need to escape app
     end
 
 
