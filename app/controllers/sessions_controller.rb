@@ -26,9 +26,34 @@ class SessionsController < ApplicationController
     def omniauth
         #sole responsibility if logging in with oauth
         #method for logging in only with omniauth
-        byebug
+        # if usere has logged in this way, find them
+        #if not, create 
+        user = User.find_or_create_by(provider: auth["provider]", uid: auth["uid"] do |u|
+            u.name = auth["info"]["first_name"]
+            u.email = auth["info"]["email"] #how to make sure it's unique and cant have log in regular way and log in omniauth
+            u.password = SecureRandom.hex(17)
+            #password needs to be assigned because macro has_secure_password validates for presence of passowrd
+            # validates that met requierments to be an object 
+
+        #find or create by to find the user with that email or create them, but want to try to find by parameters
+        #create with additional parameters
+        #pass in block tht are only used by create by
+        #find by whats passed in or create by whats passed in PLUS what is in do bloack
         #before going to 3rd party need to escape app
-    end
+        end
+
+    #check if the registered correctly
+        if user.valif?
+                session[:user_id] = user.id
+                redirect_to user_path(user)
+    #log them in 
+
+
+    # private 
+
+    # def auth #private method not to have to rewrite many times, vccan use like a has 
+    #     request.env['omniauth.auth']
+    # end
 
 
 end
