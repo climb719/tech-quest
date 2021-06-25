@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root "sessions#home"
 
-  get '/auth/google_oauth2/callback', to 'sessions#omniauth'
+  get '/auth/google_oauth2/callback' => 'sessions#omniauth'
 
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
