@@ -28,9 +28,8 @@ class SessionsController < ApplicationController
         #method for logging in only with omniauth
         # if usere has logged in this way, find them
         #if not, create 
-        user = User.find_or_create_by(provider: auth["provider]", uid: auth["uid"] do |u|
+        @user = User.find_or_create_by(email: auth["info"]["email"]) do |u|
             u.name = auth["info"]["first_name"]
-            u.email = auth["info"]["email"] #how to make sure it's unique and cant have log in regular way and log in omniauth
             u.password = SecureRandom.hex(17)
             #password needs to be assigned because macro has_secure_password validates for presence of passowrd
             # validates that met requierments to be an object 
@@ -43,14 +42,15 @@ class SessionsController < ApplicationController
         end
 
     #check if the registered correctly
-        if user.valif?
-                session[:user_id] = user.id
+        if @user.save
+                session[:user_id] = @.id
                 redirect_to user_path(user)
         else
             flash[:message] = "Something went wrong"
-            redirect_to login_page
+            redirect_to '/'
     #log them in 
-
+        end
+    end
 
     # private 
 
