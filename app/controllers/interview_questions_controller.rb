@@ -2,9 +2,10 @@ class InterviewQuestionsController < ApplicationController
     before_action :redirect_if_not_logged_in
 
     def index
-        @interview_questions = Category.all.group(:name)
-        
-        #scope ? move to model? 
+        #@interview_questions = Category.all.group(:name)
+        @interview_questions = Category.by_category
+        #scope- move to model
+        # make a Interview Question class method instead? 
     end
 
     def new
