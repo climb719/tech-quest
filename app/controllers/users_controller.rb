@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
     def index
-        @users_questions = InterviewQuestion.all
+        @users_questions = current_user.interview_questions
     end
 
     def new
