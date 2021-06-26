@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
         # find or create users - using attributes  from auth/response from 3rd party
         @user = User.find_or_create_by(email: auth["info"]["email"]) do |u|
             u.name= auth["info"]["first_name"]
-            u.password= SecureRandom.hex(17)
+            u.password= SecureRandom.hex(17) #ruby module -assign a random password
         # password needs to be assigned because macro has_secure_password validates for presence of passowrd
         # validates that met requierments to be an object 
         # #find or create by to find the user with that email or create them, but want to try to find by parameters
@@ -38,9 +38,9 @@ class SessionsController < ApplicationController
         # #find by whats passed in or create by whats passed in PLUS what is in do bloack
         # #before going to 3rd party need to escape app
          end
-    #check if the registered correctly
+    #check if the registered correctly, make sure the user saves and thne log in
         if @user.save
-                session[:user_id] = @user.id
+                session[:user_id] = @user.id #logs them in 
                 redirect_to user_path(@user)
         else
             flash[:message] = "Something went wrong"

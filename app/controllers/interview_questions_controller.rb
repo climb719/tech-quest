@@ -3,6 +3,8 @@ class InterviewQuestionsController < ApplicationController
 
     def index
         @interview_questions = Category.all.group(:name)
+        
+        #scope ? move to model? 
     end
 
     def new
