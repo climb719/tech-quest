@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+    def index
+        @users_questions = InterviewQuestion.all
+    end
+
     def new
         @user = User.new
     end
