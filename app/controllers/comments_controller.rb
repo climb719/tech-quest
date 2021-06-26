@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
     def index
-        #if it's nested and can find the question, setting value of @ post and then evaluating if @ post nil or something/true, if true will keep reading the code, if false will skip to else
+        #if it's nested and can find the question, setting value of @ interview question and then evaluating if it's nil or something/true, if true will keep reading the code, if false will skip to else
         if params[:interview_question_id] && @interview_question = InterviewQuestion.find_by_id(params[:interview_question_id])
             @comments = @interview_question.comments
             # how to add error if can't find?

@@ -4,6 +4,8 @@ class InterviewQuestionsController < ApplicationController
     def index
         #@interview_questions = Category.all.group(:name)
         @interview_questions = Category.by_category
+        @users_questions = InterviewQuestion.all
+        #current_user.interview_questions
         #scope- move to model
         # make a Interview Question class method instead? 
     end

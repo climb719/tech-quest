@@ -5,4 +5,11 @@
     <%= link_to iq.question, interview_question_path(iq) %> <br>
     <% end %>
 <% end %>
+ <br>
+ <br>
 
+<h2> My Interview Questions </h2>
+ <% @users_questions.each do |iq| %>
+    <%= link_to iq.question, interview_question_path(iq) %> <br>
+
+    <% end %>
