@@ -2,6 +2,7 @@
 <h3> <%= @interview_question.question %> </h3> 
 <br> 
 <br>
+<%= render partial: "layouts/errors", locals: {object: @interview_question} %>
 
 <%= form_for(@interview_question) do |f| %>
  
