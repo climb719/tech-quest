@@ -5,7 +5,8 @@ class CommentsController < ApplicationController
 
     def index
         #if it's nested and can find the question, setting value of @ interview question and then evaluating if it's nil or something/true, if true will keep reading the code, if false will skip to else
-        if params[:interview_question_id] && @interview_question = InterviewQuestion.find_by_id(params[:interview_question_id])
+        if nested_found_and_set
+        #if params[:interview_question_id] && @interview_question = InterviewQuestion.find_by_id(params[:interview_question_id])
             @comments = @interview_question.comments
             # how to add error if can't find?
         else
@@ -15,7 +16,8 @@ class CommentsController < ApplicationController
 
     def new
         #if nested and find the question
-        if params[:interview_question_id] && @interview_question = InterviewQuestion.find_by_id(params[:interview_question_id])
+        if nested_found_and_set
+        #if params[:interview_question_id] && @interview_question = InterviewQuestion.find_by_id(params[:interview_question_id])
             #instantiate a new comment that knows it belongs to an intrview question
             @comment = @interview_question.comments.build
         else
@@ -77,6 +79,10 @@ class CommentsController < ApplicationController
 
     def redirect_if_not_authorized
         redirect_to comments_path if @comment.user != current_user
+    end
+
+    def nested_found_and_set
+        params[:interview_question_id] && @interview_question = InterviewQuestion.find_by_id(params[:interview_question_id])
     end
 
 end
