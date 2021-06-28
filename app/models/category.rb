@@ -8,5 +8,6 @@ class Category < ApplicationRecord
     #whenever do association calls (ie category.interview_questions), returning active record relation c
     # add scope method - class level methods that limit the return to be a scope return - return some of the
     # questions - most commented, organize, sort by category, some questions only
+    #validates :name, presence: true ?
 end
 
