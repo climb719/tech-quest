@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
     before_action :redirect_if_not_logged_in
     before_action :find_comment, only [:show, :edit, :update]
+    before_action :redirect_if_not_authorized, only [:edit, :update]
 
     def index
         #if it's nested and can find the question, setting value of @ interview question and then evaluating if it's nil or something/true, if true will keep reading the code, if false will skip to else
@@ -32,17 +33,20 @@ class CommentsController < ApplicationController
     end
 
     def show
-   
+        # @comment = Comment.find_by(id: params[:id])
+        # redirect_to comments_path if !@comment
     end
 
     def edit
-      
-        redirect_to comments_path if @comment.user != current_user
+        # @comment = Comment.find_by_id(params[:id])
+        # #binding.pry
+        # redirect_to comments_path if !@comment  || @comment.user != current_user
     end
 
     def update
-     
-        redirect_to comments_path @comment.user != current_user
+        # @comment = Comment.find_by_id(params[:id])
+        # #binding.pry
+        # redirect_to comments_path if !@comment || @comment.user != current_user
         if @comment.update(comment_params)
             redirect_to comment_path(@comment)
         else
@@ -72,5 +76,8 @@ class CommentsController < ApplicationController
         end
     end 
 
-
+    def redirect_if_not_authorized
+        redirect_to comments_path @comment.user != current_user
+    end
+    
 end
