@@ -20,4 +20,9 @@
     <%= f.submit "Submit" %>
     <% end %>
 
-    <h5> Opps, I already have an account, I meant to <%= link_to "Log In", '/login' %></h5>
+    <h5> Opps, I already have an account, I meant to: <br></h5> 
+    <%= link_to "Log In", '/login' %> <br>
+    <br>
+    OR<br>
+    <br>
+    <%= button_to "Log in with Google", "/auth/google_oauth2" %> 
