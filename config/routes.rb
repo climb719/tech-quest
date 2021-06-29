@@ -22,8 +22,13 @@ Rails.application.routes.draw do
   resources :interview_questions do
     resources :comments, only: [:new, :create, :index] 
   end
-  resources :users, only: [:new, :create, :show] 
-  get '/:my_questions' => 'users#index'
+  resources :users do
+    resources :interview_questions, only: [:index]
+  end
+  #  resources :users, only: [:new, :create, :show] 
+  
+  
+  #get '/:my_questions' => 'users#index'
   
   #routes order matters so custom routes don't get associated with an id
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

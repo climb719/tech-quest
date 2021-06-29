@@ -16,6 +16,7 @@
     <% if logged_in?%>
     <%= link_to "All Interview Questions", interview_questions_path %> |
     <%= link_to "My Interview Questions", '/my_questions' %> |
+    <%= link_to "MY Q's", user_interview_questions_path(current_user) %> |
     <%= link_to "Add an Interview Question", new_interview_question_path %> |
     <%= link_to "All Comments", comments_path %> |
     <%= link_to "All Categories", categories_path %> |

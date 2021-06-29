@@ -1,8 +1,14 @@
 class InterviewQuestionsController < ApplicationController
     before_action :redirect_if_not_logged_in
     def index
+        #check if nested,, if nested will have iq parameter for iq ide
+        if params[:user_id] && @user = User.find_by_id(params[:user_id])
+            @interview_questions = @user.categories.by_category 
+           
         #@interview_questions = Category.all.group(:name)
-        @interview_questions = Category.by_category
+        else
+            @interview_questions = Category.by_category
+        end
     end
 
     def new
