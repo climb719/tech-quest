@@ -1,6 +1,5 @@
-<h2> My Interview Questions </h2>
+<h1> <%=current_user.name%>'s Interview Questions </h1>
+<% @users_questions.each do |iq| %>
+   <%= link_to iq.question, interview_question_path(iq) %> <br>
 
- <% @users_questions.each do |iq| %>
-    <%= link_to iq.question, interview_question_path(iq) %> <br>
-
-    <% end %>
+<% end %>

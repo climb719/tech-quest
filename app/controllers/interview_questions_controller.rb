@@ -1,13 +1,8 @@
 class InterviewQuestionsController < ApplicationController
     before_action :redirect_if_not_logged_in
-
     def index
         #@interview_questions = Category.all.group(:name)
         @interview_questions = Category.by_category
-        #@users_questions = InterviewQuestion.all
-        #current_user.interview_questions
-        #scope- move to model
-        # make a Interview Question class method instead? 
     end
 
     def new
