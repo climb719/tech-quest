@@ -27,6 +27,7 @@ class UsersController < ApplicationController
     def show
         redirect_if_not_logged_in
         @user = User.find_by_id(params[:id])
+        @users_questions = current_user.categories.by_category
         redirect_to '/' if !@user
         #find by id will return nil if doesn't find and find throws an error
     end
