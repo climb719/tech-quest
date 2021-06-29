@@ -7,7 +7,6 @@ Post a question <%= link_to "here", new_interview_questions_path%> </h2>
 
 <% else %>
 <h3> My Interview Questions: </h3>
-
-<%= render partial: "interview_questions/questions", locals: {interview_questions: @users_questions} %>
-
+<%= render partial: "questions", locals: {interview_questions: @users_questions} %>
 <% end %>
+

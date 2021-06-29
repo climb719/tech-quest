@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
     def index
         @users_questions = current_user.categories.by_category
-        binding.pry
+        #binding.pry
     
     end
 
