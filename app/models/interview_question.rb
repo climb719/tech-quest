@@ -8,6 +8,8 @@ class InterviewQuestion < ApplicationRecord
  # field with errors shows up - form for accepts an object, if excepts an object with an error, it will add div -field with errors
  # but page must be rendered, if redirect, will loose data - also check if content doesn't dissapear
   
+
+ 
 # add other validations? 
 end
 
