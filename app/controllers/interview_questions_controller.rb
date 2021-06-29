@@ -4,7 +4,7 @@ class InterviewQuestionsController < ApplicationController
         #check if nested,, if nested will have iq parameter for iq ide
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
             @interview_questions = @user.categories.by_category 
-           
+           #binding.pry
         #@interview_questions = Category.all.group(:name)
         else
             @interview_questions = Category.by_category
