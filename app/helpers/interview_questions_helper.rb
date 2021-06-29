@@ -7,6 +7,7 @@ module InterviewQuestionsHelper
          "Add a new Interview Question here:"
         end 
     end
+
 end
 
 
@@ -15,3 +16,4 @@ end
 # <% else %>
 # <h1>Add a new Interview Question here:</h1>
 # <% end %>
+
