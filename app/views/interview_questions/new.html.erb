@@ -1,8 +1,4 @@
-<% if @interview_question.category %>
-<h1>New Interview Question for:</h1> <br> <h2><%= @interview_question.category.name %></h2> 
-<% else %>
-<h1>Add a new Interview Question here:</h1>
-<% end %>
+<h2><%= new_question_header %></h2>
 
 
 <%= render partial: "layouts/errors", locals: {object: @interview_question} %>
