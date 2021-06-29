@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
 
     def index
-        @users_questions = current_user.interview_questions
+        @users_questions = current_user.categories.by_category
+        binding.pry
+    
     end
 
-    def new
-        @user = User.new
-    end
 
     def create
             @user = User.new(user_params)

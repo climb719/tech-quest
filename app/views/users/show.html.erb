@@ -7,6 +7,7 @@ Post a question <%= link_to "here", new_interview_questions_path%> </h2>
 
 <% else %>
 <h3> My Interview Questions: </h3>
+
 <% @user.interview_questions.each do |iq| %>
     <%= link_to iq.question, interview_question_path(iq) %> <br>
  <% end %>
