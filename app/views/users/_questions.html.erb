@@ -1,9 +1,0 @@
-  
-<% interview_questions.each do |category| %>
-    <b><%=category.name  if !category.interview_questions.empty? %></b><br>
-    <% category.interview_questions.each do |iq| %>
- 
-        <%= link_to iq.question, interview_question_path(iq) if iq.user == current_user %> <br>
-
-    <% end %>  
-<% end %>
