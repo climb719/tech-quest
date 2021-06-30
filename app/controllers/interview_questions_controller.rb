@@ -1,5 +1,6 @@
 class InterviewQuestionsController < ApplicationController
     before_action :set_question, only: [:show, :edit, :update]
+    before_action :redirect_if_not_authorized, only: [:edit, :update]
     
     def index
         #check if nested,, if nested will have iq parameter for iq ide
@@ -82,6 +83,10 @@ class InterviewQuestionsController < ApplicationController
             redirect_to interview_questions_path
         end
     end 
+
+    def redirect_if_not_authorized
+        redirect_to interview_questions_path if @interview_question.user != current_user
+    end
 
     
 end
