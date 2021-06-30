@@ -2,7 +2,8 @@
 <h4> Posted by: <%= @interview_question.user.name %></h4>
 
 <div> <%= @interview_question.answer %> <br>
-      <h5> Category: <%= @interview_question.category.name %> </h5>
+      
+      <h3>Category: <%= @interview_question.category.try(:name)%></h3>
 </div>
 
 <h3> Comments: </h3>
