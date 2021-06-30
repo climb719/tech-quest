@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+    skip_before_action :redirect_if_not_logged_in, only: [:new, :create]
     # def index
     #     @users_questions = current_user.categories.by_category
     #     #binding.pry
@@ -25,7 +25,6 @@ class UsersController < ApplicationController
  
 
     def show
-        redirect_if_not_logged_in
         @user = User.find_by_id(params[:id])
         @users_questions = current_user.categories.by_category
         redirect_to '/' if !@user

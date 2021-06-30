@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
-
+    before_action :redirect_if_not_logged_in
     #gives access to methods in views 
     helper_method :current_user, :logged_in?
     #add helpers to check current user and if someone is logged in and redirect if not logged in
+    
     private 
 
     def current_user
@@ -14,8 +15,6 @@ class ApplicationController < ActionController::Base
     def logged_in?
         !!session[:user_id]
     end
-
-    
 
     def redirect_if_not_logged_in
         redirect_to '/' if !logged_in?
