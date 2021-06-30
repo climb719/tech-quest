@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-    has_many :interview_questions
+    has_many :interview_questions, dependent: :destroy
    
 
     scope :alphabetical, -> { order(:name) }
