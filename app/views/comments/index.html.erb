@@ -12,3 +12,10 @@
     <% end %>
 </ul>
 
+
+<% if @comments.empty? %>
+ 
+<h2>Looks like there aren't any comments yet! </h2>
+Post a comment  <h>  <%= link_to "here", new_interview_question_comment_path(@interview_question) %> </p>
+<% end %>
+

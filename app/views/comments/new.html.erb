@@ -1,6 +1,7 @@
 <% if @comment.interview_question %>
-<h1>New comment for:</h1> <br> <h2><%= @comment.interview_question.question %></h2> 
-<p><%= @comment.interview_question.answer %></p>
+<h1>New comment for:</h1> 
+<h2><%= @comment.interview_question.question %></h2> 
+<p> <b> Answer from <%= @comment.interview_question.user.name %>:</b> <%= @comment.interview_question.answer %></p>
 <% else %>
 <h1>Add a Comment here:</h1>
 <% end %>
