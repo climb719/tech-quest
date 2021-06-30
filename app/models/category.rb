@@ -1,6 +1,6 @@
 class Category < ApplicationRecord
     has_many :interview_questions, dependent: :destroy
-    validates :name, uniquess: true, presence: true
+    validates :name, uniqueness: true, presence: true
    
 
     scope :alphabetical, -> { order(:name) }

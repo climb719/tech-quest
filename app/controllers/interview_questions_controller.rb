@@ -36,18 +36,21 @@ class InterviewQuestionsController < ApplicationController
     end
 
     def show
-        @interview_question = InterviewQuestion.find_by(id: params[:id])
+        find_question
+        # @interview_question = InterviewQuestion.find_by(id: params[:id])
     end
 
     def edit
-        @interview_question = InterviewQuestion.find_by_id(params[:id])
-        #binding.pry
-        redirect_to interview_questions_path if !@interview_question
+        find_question
+        # @interview_question = InterviewQuestion.find_by_id(params[:id])
+        # #binding.pry
+        # redirect_to interview_questions_path if !@interview_question
     end
 
     def update
-        @interview_question = InterviewQuestion.find_by(id: params[:id])
-        redirect_to interview_questions_path if !@interview_question
+        find_question
+        # @interview_question = InterviewQuestion.find_by(id: params[:id])
+        # redirect_to interview_questions_path if !@interview_question
         if @interview_question.update(interview_question_params)
             redirect_to interview_question_path(@interview_question)
         else
@@ -71,6 +74,14 @@ class InterviewQuestionsController < ApplicationController
     def interview_question_params
         params.require(:interview_question).permit(:question, :answer, :category_id, category_attributes: [:name])
     end
+
+    def find_question
+        @interview_question = InterviewQuestion.find_by(id: params[:id])
+        if !@interview_question
+            flash[:message] = "Question not found"
+            redirect_to interview_question_path
+        end
+    end 
 
     
 end

@@ -35,17 +35,20 @@ class CommentsController < ApplicationController
     end
 
     def show
+        find_comment
         # @comment = Comment.find_by(id: params[:id])
         # redirect_to comments_path if !@comment
     end
 
     def edit
+        find_comment
         # @comment = Comment.find_by_id(params[:id])
         # #binding.pry
         # redirect_to comments_path if !@comment  
     end
 
     def update
+        find_comment
         # @comment = Comment.find_by_id(params[:id])
         # #binding.pry
         # redirect_to comments_path if !@comment 
