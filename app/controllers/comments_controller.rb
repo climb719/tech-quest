@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
-    before_action :redirect_if_not_logged_in
-    before_action :find_comment, only: [:show, :edit, :update]
+    before_action :set_comment, only: [:show, :edit, :update]
     before_action :redirect_if_not_authorized, only: [:edit, :update]
 
     def index
@@ -35,20 +34,20 @@ class CommentsController < ApplicationController
     end
 
     def show
-        find_comment
+        #set_comment
         # @comment = Comment.find_by(id: params[:id])
         # redirect_to comments_path if !@comment
     end
 
     def edit
-        find_comment
+        #set_comment
         # @comment = Comment.find_by_id(params[:id])
         # #binding.pry
         # redirect_to comments_path if !@comment  
     end
 
     def update
-        find_comment
+        #set_comment
         # @comment = Comment.find_by_id(params[:id])
         # #binding.pry
         # redirect_to comments_path if !@comment 
@@ -72,7 +71,7 @@ class CommentsController < ApplicationController
         params.require(:comment).permit(:content, :interview_question_id)
     end
 
-    def find_comment
+    def set_comment
         @comment = Comment.find_by(id: params[:id])
         if !@comment
             flash[:message] = "Comment not found"

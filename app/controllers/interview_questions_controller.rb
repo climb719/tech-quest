@@ -1,5 +1,5 @@
 class InterviewQuestionsController < ApplicationController
-    
+    before_action :set_question, only: [:show, :edit, :update]
     
     def index
         #check if nested,, if nested will have iq parameter for iq ide
@@ -36,19 +36,19 @@ class InterviewQuestionsController < ApplicationController
     end
 
     def show
-        find_question
+       #set_question
         # @interview_question = InterviewQuestion.find_by(id: params[:id])
     end
 
     def edit
-        find_question
+        #set_question
         # @interview_question = InterviewQuestion.find_by_id(params[:id])
         # #binding.pry
         # redirect_to interview_questions_path if !@interview_question
     end
 
     def update
-        find_question
+        #set_question
         # @interview_question = InterviewQuestion.find_by(id: params[:id])
         # redirect_to interview_questions_path if !@interview_question
         if @interview_question.update(interview_question_params)
@@ -75,11 +75,11 @@ class InterviewQuestionsController < ApplicationController
         params.require(:interview_question).permit(:question, :answer, :category_id, category_attributes: [:name])
     end
 
-    def find_question
+    def set_question
         @interview_question = InterviewQuestion.find_by(id: params[:id])
         if !@interview_question
             flash[:message] = "Question not found"
-            redirect_to interview_question_path
+            redirect_to interview_questions_path
         end
     end 
 
