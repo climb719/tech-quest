@@ -1,5 +1,4 @@
-  
-<% interview_questions.each do |category| %>
+  <% interview_questions.each do |category| %>
     <b><%=category.name  if !category.interview_questions.empty? %></b><br>
     <% category.interview_questions.each do |iq| %>
        <% if @user %>

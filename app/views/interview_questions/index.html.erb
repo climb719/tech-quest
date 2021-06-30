@@ -5,7 +5,11 @@
  <h2>Looks like you haven't added any interview questions yet. 
  Post a question <%= link_to "here", new_interview_question_path%> </h2>
 <% end %>
+
+
 <%= render partial: "questions", locals: {interview_questions: @interview_questions} %>
+
+
 
 
 
