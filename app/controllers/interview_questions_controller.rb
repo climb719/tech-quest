@@ -46,6 +46,7 @@ class InterviewQuestionsController < ApplicationController
         # @interview_question = InterviewQuestion.find_by_id(params[:id])
         # #binding.pry
         # redirect_to interview_questions_path if !@interview_question
+        
     end
 
     def update
