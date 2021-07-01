@@ -8,13 +8,13 @@ module InterviewQuestionsHelper
         end
     end
 
-    def new_question_header
-        if @interview_question.category
-          "New Interview Question for #{@interview_question.category.name}"
-        else
-         "Add a new Interview Question here:"
-        end 
-    end
+    # def new_question_header
+    #     if @interview_question.category
+    #       "New Interview Question for #{@interview_question.category.name}"
+    #     else
+    #      "Add a new Interview Question here:"
+    #     end 
+    # end
 
     # def display_categories_and_questions
     #     @interview_questions.each do |category| 
