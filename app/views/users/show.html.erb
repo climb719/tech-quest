@@ -1,17 +1,8 @@
 <h1>Welcome <%=@user.name %>! </h1>
-
-<% if @user.interview_questions.empty? %>
- 
-<h2>Looks like you haven't added any interview questions yet. 
-Post a question <%= link_to "here", new_interview_question_path%> </h2>
-<% else %>
-<h3> My Interview Questions: </h3>
-<%= render partial: "interview_questions/questions", locals: {interview_questions: @users_questions} %>
+<h3> Here are your interview questions: </h3>
+<%= display_users_questions %>
 <br>
 <br>
-<% end %>
-
-
 <%= form_tag("/logout", method: 'delete') do %>
 <%= submit_tag "Logout" %>
 <% end %>

@@ -19,6 +19,7 @@
     <%= link_to "Add an Interview Question", new_interview_question_path %> |
     <%= link_to "All Comments", comments_path %> |
     <%= link_to "All Categories", categories_path %> |
+    <%= link_to "Home", user_path(current_user)%> |
     <%= link_to "Log Out", logout_path, method:"delete" %>
     <% end %>
     </div>
