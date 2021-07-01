@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
     before_action :set_comment, only: [:show, :edit, :update]
     before_action :redirect_if_not_authorized, only: [:edit, :update]
+    #vs redirect authorized
 
     def index
         #if it's nested and can find the question, setting value of @ interview question and then evaluating if it's nil or something/true, if true will keep reading the code, if false will skip to else

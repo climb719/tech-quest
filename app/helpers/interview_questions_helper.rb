@@ -8,6 +8,14 @@ module InterviewQuestionsHelper
         end
     end
 
+    def display_interview_questions
+        if @interview_questions.empty? 
+            content_tag(:h2, "Looks like you haven't added any interview questions yet. Post a question <a href='/interview_questions/new'>HERE</a>")
+        else
+             render partial: "questions", locals: {interview_questions: @interview_questions} 
+        end
+    end
+
     # def new_question_header
     #     if @interview_question.category
     #       "New Interview Question for #{@interview_question.category.name}"
@@ -51,3 +59,12 @@ end
 # <h2>Looks like you haven't added any interview questions yet. 
 # Post a question <%= link_to "here", new_interview_questions_path </h2>
 
+
+# <% if @interview_questions.empty? %>
+ 
+# <h2>Looks like you haven't added any interview questions yet. 
+# Post a question <%= link_to "here", new_interview_question_path%> </h2>
+# <% end %>
+
+
+# <%= render partial: "questions", locals: {interview_questions: @interview_questions} %>
