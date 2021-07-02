@@ -1,16 +1,24 @@
 <h4> Posted by: <%= @interview_question.user.name %></h4>
 <h1> <%=@interview_question.question %> </h1>
 <h3> <%= @interview_question.answer %> </h3>
-<h4>Category: <%= @interview_question.category.try(:name)%></h4>
+<br>
 
-<h4> Comments: </h4>
 
-<% @interview_question.comments.order_and_limit.each do |c| %>
-<li> <%= c.user.name %> said "<%= link_to truncate(c.content, :length => 65), comment_path(c) %>" on <%= c.display_date %>  </li>
-<% end %>
-
-<p>  <%= link_to "See all comments for this question", interview_question_comments_path(@interview_question) %> </p>
- 
-<p>  <%= link_to "Add a Comment", new_interview_question_comment_path(@interview_question) %> </p>
+<h4>Category: <%= @interview_question.category.name%></h4>
 
 <p>  <%= link_to "Edit Question", edit_interview_question_path(@interview_question) if @interview_question.user == current_user %> </p>
+<br>
+<h5> Comments: </h5>
+<% if @interview_question.comments.empty? %>
+<p> There are no comments yet, add a comment <%= link_to "here", new_interview_question_comment_path(@interview_question) %> </p>
+<% else %>
+<% @interview_question.comments.order_and_limit.each do |c| %>
+<li> <%= c.user.name %> said "<%= link_to truncate(c.content, :length => 65), comment_path(c) %>" on <%= c.display_date %>  </li>
+
+<br>
+<p>  <%= link_to "See all comments for this question", interview_question_comments_path(@interview_question) %> </p>
+
+<p>  <%= link_to "Add a Comment", new_interview_question_comment_path(@interview_question) %> </p>
+<% end %>
+<% end %>
+
