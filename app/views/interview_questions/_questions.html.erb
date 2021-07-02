@@ -1,10 +1,13 @@
   <% interview_questions.each do |category| %>
-    <b><%=category.name  if !category.interview_questions.empty? %></b><br>
+   <% if category.interview_questions.any? %>
+   <strong><%=category.name %></strong><br> 
     <% category.interview_questions.each do |iq| %>
        <% if @user %>
-       <li><%= link_to iq.question, interview_question_path(iq) if iq.user == current_user %></li>
+      <%= link_to iq.question, interview_question_path(iq) if iq.user == current_user%> <br>
         <% else %>
-        <li> <%= link_to iq.question, interview_question_path(iq)%></li>
+        <li><%=link_to iq.question, interview_question_path(iq)%></li> <br>
+        
         <%end%>
+      <%end%>
     <%end%>
-<%end%>
+  <%end%> 
