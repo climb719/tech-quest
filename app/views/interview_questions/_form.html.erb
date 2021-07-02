@@ -1,14 +1,11 @@
 <%= form_for(@interview_question) do |f| %>
- 
     <%= f.label :question %>:
     <%= f.text_area :question  %>
-    <br>
-    <br>
+    <br></br>
     <%= f.label :answer %>:
     <%= f.text_area :answer %>
-    <br>
-    <br>
-  
+    <br></br>
+
     <%= f.label "Choose a category for this question:" %>
     <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: true %>
     
@@ -17,10 +14,8 @@
         <%= c.text_field :name, value: nil %>
         <% end %>
     </p>
-
     <br></br>
     <%= f.submit "Submit Your Interview Question" %>
-
     <% end %>
 
    
