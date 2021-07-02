@@ -10,7 +10,7 @@ module InterviewQuestionsHelper
 
     def display_interview_questions
         if @interview_questions.empty? 
-            content_tag(:h2, "Looks like you haven't added any interview questions yet. Post a question <a href='/interview_questions/new'>HERE</a>")
+            tag.h2(link_to('Looks like you have not added any interview questions yet. Post a question here', new_interview_question_path))
         else
              render partial: "questions", locals: {interview_questions: @interview_questions}
         end
