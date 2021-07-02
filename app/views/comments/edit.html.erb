@@ -1,9 +1,7 @@
 <h1>Edit you Comment here:</h1>
 
 <%= render partial: "layouts/errors", locals: {object: @comment} %>
-
 <%= form_for(@comment) do |f| %>
-
     <%= f.text_field :content  %>
     <%= f.submit "Update" %>
-    <% end %>
+<% end %>

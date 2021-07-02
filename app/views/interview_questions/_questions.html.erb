@@ -3,11 +3,8 @@
     <% category.interview_questions.each do |iq| %>
        <% if @user %>
        <%= link_to iq.question, interview_question_path(iq) if iq.user == current_user %> <br>
-
         <% else %>
         <%= link_to iq.question, interview_question_path(iq)  %> <br>
-  
         <% end %> 
     <% end %>   
-
 <% end %>

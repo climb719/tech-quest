@@ -1,12 +1,4 @@
 <h1><%= @category.name %></h1>
-<% if @category.interview_questions.empty? %>
-<h3> Looks like there are no questions in this category yet! </h3>
-<% else %>
-<% @category.interview_questions.each do |iq| %>
-    <li> <%= link_to iq.question, interview_question_path(iq) %> </li>
-    <% end %>
-<% end %>
-
+<%= show_category %>
 <p><%= link_to "Add an Interview Question", new_category_interview_question_path(@category) %></p>
-
 <p><%= link_to "Back to All Categories", categories_path %> </p>
