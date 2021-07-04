@@ -8,7 +8,7 @@
 
 <ul> 
 <% @comments.each do |c| %>
-    <li> <%= c.user.name %> added "<%= link_to truncate(c.content, :length => 80), comment_path(c) %>" </li> to this question: <%= link_to c.interview_question.question, interview_question_path(c.interview_question_id)%> on <%= c.display_date %> </li> 
+    <li> <%= c.user.name %> added "<%= link_to truncate(c.content, :length => 80), comment_path(c) %>" </li> to this question: <%= link_to c.interview_question.question, interview_question_path(c.interview_question_id)%> on <%= c.display_date %> </li> <br></br>
     <% end %>
 </ul>
 

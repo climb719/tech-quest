@@ -1,5 +1,7 @@
 <h3> <%=@comment.user.name %> said: </h3>
 <%= @comment.content %>
+<br>
+<br>
 <h6> <%= @comment.display_date %>
 
 <% if @comment.user == current_user%>

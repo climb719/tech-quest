@@ -3,6 +3,7 @@ class InterviewQuestion < ApplicationRecord
   belongs_to :category
   has_many :comments, dependent: :destroy
   has_many :users, through: :comments
+   
   #accepts_nested_attributes_for :category
   validates :question, :answer, presence: true 
  # field with errors shows up - form for accepts an object, if excepts an object with an error, it will add div -field with errors
