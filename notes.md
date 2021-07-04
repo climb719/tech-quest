@@ -42,3 +42,6 @@
         - #new and #index
         - '/interview_questions/:id/comments'
         - '/categories/:id/interview_questions'
+
+What is a hash?
+ collection of key-value pairs 
