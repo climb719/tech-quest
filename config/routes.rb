@@ -11,14 +11,14 @@ Rails.application.routes.draw do
 
   delete '/logout' => 'sessions#destroy'
 
-  resources :comments, except: [:new, :create]
+  resources :comments
 
   resources :categories do
     resources :interview_questions, only: [:new, :create, :index] 
   end
 
   resources :interview_questions do
-    resources :comments, only: [:new, :create]
+    resources :comments, only: [:new, :create, :index]
   end
   
   resources :users do
