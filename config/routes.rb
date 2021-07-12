@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :interview_questions, only: [:new, :create, :index] 
   end
   resources :interview_questions do
-    resources :comments, only: [:new, :create, :index] 
+    resources :comments, only: [:new, :create]
   end
   resources :users do
     resources :interview_questions, only: [:index]

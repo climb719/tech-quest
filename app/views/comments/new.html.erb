@@ -1,24 +1,8 @@
-<% if @comment.interview_question %>
 <h1>New comment for:</h1> 
 <h2><%= @comment.interview_question.question %></h2> 
 <p> <b> Answer from <%= @comment.interview_question.user.name %>:</b> <%= @comment.interview_question.answer %></p>
-<% else %>
-<h1>Add a Comment here:</h1>
-<% end %>
 
+<label> Add your comment: </label>
+<%= render partial: 'form'%>
 <%= render partial: "layouts/errors", locals: {object: @comment} %>
 
-<%= form_for([@interview_questions, @comment]) do |f| %>
-    <% if !@comment.interview_question %>
-    <%= f.label :interview_question %>
-    <%= f.collection_select :interview_question_id, InterviewQuestion.all, :id, :question, include_blank: true %>
-    <% else %>
-    <%= f.hidden_field :interview_question_id %>
-    <% end %>
- 
-    <label> Add your comment: </label>
-    <%= f.text_field :content  %>
-    <%= f.submit "Submit" %>
-    
-    <% end %>
-  
