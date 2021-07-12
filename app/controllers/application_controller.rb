@@ -2,15 +2,11 @@ class ApplicationController < ActionController::Base
     before_action :redirect_if_not_logged_in
     
     helper_method :current_user, :logged_in?
-    #gives access to methods in views 
-    #add helpers to check current user and if someone is logged in and redirect if not logged in
-    
+   
     private 
 
     def current_user
         @current_user ||= User.find_by_id(session[:user_id]) if session[:user_id]
-        #memoization or = if @ current user is already exists
-        # it will return current user or it will find by id in users tabel
     end
 
     def logged_in?

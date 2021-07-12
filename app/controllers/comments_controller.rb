@@ -1,24 +1,18 @@
 class CommentsController < ApplicationController
     before_action :set_comment, only: [:show, :edit, :update]
     before_action :redirect_if_not_authorized, only: [:edit, :update]
-    #vs redirect authorized
+
 
     def index
-        #if it's nested and can find the question, setting value of @ interview question and then evaluating if it's nil or something/true, if true will keep reading the code, if false will skip to else
         if nested_found_and_set
-        #if params[:interview_question_id] && @interview_question = InterviewQuestion.find_by_id(params[:interview_question_id])
             @comments = @interview_question.comments
-            # how to add error if can't find?
         else
             @comments = Comment.all
         end
     end
 
     def new
-        #if nested and find the question
         if nested_found_and_set
-        #if params[:interview_question_id] && @interview_question = InterviewQuestion.find_by_id(params[:interview_question_id])
-            #instantiate a new comment that knows it belongs to an intrview question
             @comment = @interview_question.comments.build
         else
             @comment = Comment.new
@@ -35,23 +29,12 @@ class CommentsController < ApplicationController
     end
 
     def show
-        #set_comment
-        # @comment = Comment.find_by(id: params[:id])
-        # redirect_to comments_path if !@comment
     end
 
     def edit
-        #set_comment
-        # @comment = Comment.find_by_id(params[:id])
-        # #binding.pry
-        # redirect_to comments_path if !@comment  
     end
 
     def update
-        #set_comment
-        # @comment = Comment.find_by_id(params[:id])
-        # #binding.pry
-        # redirect_to comments_path if !@comment 
         if @comment.update(comment_params)
             redirect_to comment_path(@comment)
         else
