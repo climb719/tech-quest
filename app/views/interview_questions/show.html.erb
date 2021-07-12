@@ -3,11 +3,10 @@
 <h3> <%= @interview_question.answer %> </h3>
 <br>
 
-
 <h4>Category: <%= @interview_question.category.name%></h4>
-
 <p>  <%= link_to "Edit Question", edit_interview_question_path(@interview_question) if @interview_question.user == current_user %> </p>
 <br>
+
 <h5> Comments: </h5>
 <% if @interview_question.comments.empty? %>
 <p> There are no comments yet, add a comment <%= link_to "here", new_interview_question_comment_path(@interview_question) %> </p>
@@ -17,7 +16,6 @@
 
 <br>
 <p>  <%= link_to "See all comments for this question", interview_question_comments_path(@interview_question) %> </p>
-
 <p>  <%= link_to "Add a Comment", new_interview_question_comment_path(@interview_question) %> </p>
 <% end %>
 <% end %>
