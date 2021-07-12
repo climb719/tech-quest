@@ -1,3 +1,5 @@
+<%= render partial: "layouts/errors", locals: {object: @interview_question} %>
+
 <%= form_for(@interview_question) do |f| %>
     <%= f.label :question %>
     <%= f.text_area :question  %>
