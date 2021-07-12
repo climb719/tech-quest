@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   delete '/logout' => 'sessions#destroy'
 
-  resources :comments
+  resources :comments, except: [:new, :create]
 
   resources :categories do
     resources :interview_questions, only: [:new, :create, :index] 

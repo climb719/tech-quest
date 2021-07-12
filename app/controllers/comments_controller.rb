@@ -58,7 +58,7 @@ class CommentsController < ApplicationController
     def set_comment
         @comment = Comment.find_by(id: params[:id])
         if !@comment
-            flash[:message] = "Comment not found"
+            flash[:message] = "Comment not found!"
             redirect_to comments_path
         end
     end 
