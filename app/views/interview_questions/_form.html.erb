@@ -7,14 +7,15 @@
     <%= f.label :answer %>
     <%= f.text_area :answer %>
     <br></br>
-
-    <%= f.label "Choose a category for this question:" %>
-    <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: true %>
+    <% if !params[:category_id] %>
+        <%= f.label "Choose a category for this question:" %>
+        <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: true %>
     
-    <p> Or create a new category:
-    <%= f.fields_for :category do |c| %>
+        <p> Or create a new category:
+         <%= f.fields_for :category do |c| %>
         <%= c.text_field :name, value: nil %>
         <% end %>
+    <% end %>
     </p>
     <br></br>
     <%= f.submit %>

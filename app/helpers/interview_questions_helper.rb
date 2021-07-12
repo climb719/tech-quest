@@ -11,7 +11,7 @@ module InterviewQuestionsHelper
     
     def display_new_header
         if @category
-             content_tag(:h1, "Create a question for #{@category.name}")
+             content_tag(:h1, "Create an Interview Question for #{@category.name}")
         else 
              content_tag(:h1, "Create an Interview Question")
         end 
