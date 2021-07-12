@@ -12,11 +12,11 @@ class InterviewQuestionsController < ApplicationController
 
     def new
         if params[:category_id] && @category = Category.find_by_id(params[:category_id])
-            @interview_question = @category.interview_questions.build
+            @interview_question = InterviewQuestion.new(category_id: params[:category_id])
         else
             @interview_question = InterviewQuestion.new
+            @interview_question.build_category
         end
-        @interview_question.build_category
     end
 
     
