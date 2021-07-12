@@ -9,25 +9,24 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-    <nav class='navbar'>
-    <% if logged_in?%>
-    <%= link_to "All Interview Questions", interview_questions_path %> 
-    <%= link_to "My Interview Questions", user_interview_questions_path(current_user) %> 
-    <%= link_to "Add an Interview Question", new_interview_question_path %> 
-    <%= link_to "All Comments", comments_path %> 
-    <%= link_to "All Categories", categories_path %> 
-    <%= link_to "Home", user_path(current_user)%> 
-    <%= link_to "Log Out", logout_path, method:"delete" %>
-    <% end %>
-    </nav>
+    <body>
+      <nav class='navbar'>
+      <% if logged_in?%>
+      <%= link_to "All Interview Questions", interview_questions_path %> 
+      <%= link_to "My Interview Questions", user_interview_questions_path(current_user) %> 
+      <%= link_to "Add an Interview Question", new_interview_question_path %> 
+      <%= link_to "All Comments", comments_path %> 
+      <%= link_to "All Categories", categories_path %> 
+      <%= link_to "Home", user_path(current_user)%> 
+      <%= link_to "Log Out", logout_path, method:"delete" %>
+      <% end %>
+      </nav>
     
     <div>
     <% if flash[:message] %>
         <%= flash[:message]%>
     <% end %>
-   <%= @error%> 
+      <%= @error%> 
     </div>
     <div class='container'>
     <%= yield %>
@@ -36,6 +35,5 @@
     <footer class="branding">
     <p> <small>&copy; 2021 <strong>Tech Quest</strong></small></p>
     </footer>
-
   </body>
 </html>

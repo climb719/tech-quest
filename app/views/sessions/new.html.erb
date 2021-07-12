@@ -1,8 +1,7 @@
 <h1>Log In </h1>
 <%=flash[:massage] if flash[:massage] %>
-<! pass in model instead of object because not creating an object and knows about attributes of user and interprets login route will post method >
+
 <%= form_for :user do |f| %>
-    
     <%= f.label :email %>
     <%= f.email_field :email, require:true %>
     <br>
@@ -12,8 +11,8 @@
     <br>
     <br>
     <%= f.submit "Login" %>
-    <% end %>
-<br>
+<% end %>
+    <br>
     <h5> Opps, I don't have an account yet, I meant to  <%= link_to "Sign Up", '/signup' %>  </h5> 
   
     
