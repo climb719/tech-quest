@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
     skip_before_action :redirect_if_not_logged_in
 
     def home
+        @interview_question = InterviewQuestion.all.sample
     end
 
     def destroy
