@@ -10,7 +10,6 @@ class Comment < ApplicationRecord
   def self.order_and_limit
     Comment.all.order('created_at DESC').take(3)
   end
-  
 end
 
 
