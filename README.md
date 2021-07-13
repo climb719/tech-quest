@@ -9,10 +9,10 @@ Lets get you up and running.
 * Github
 
 # Database creation
-* Run rails db:create and rails db:migrate to create and setup the database.
+* Run 'rails db:create' and 'rails db:migrate' to create and setup the database.
 
 # Add sample data
-* Run rails db:seed
+* Run 'rails db:seed'
 
 # To run Tech Quest
 * Clone this repository and open it on your local machine
