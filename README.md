@@ -15,7 +15,7 @@ Lets get you up and running.
 * Run 'rails db:seed'
 
 # To run Tech Quest
-* Clone this repository and open it on your local machine
+* Clone this repository and open it on your local machine.
 * Create an '.env' file and add that '.env' file to '.gitignore' 
 * Set up a your own new project through Google Developer Console in order to  aquire a personal Google Client Id and Google Secret Id. Once aquired, save these in the'.env' file.
 * To start the rails server, use the command 'rails s' and go to localhost:3000 in your browser.
